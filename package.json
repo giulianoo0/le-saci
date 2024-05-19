@@ -1,0 +1,21 @@
+{
+  "name": "saci-int",
+  "version": "1.0.0",
+  "description": "Um interpretador funcional que simula à risca o ambiente saci - feito em Node",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --platform=node --outfile=out/compiler.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/minimist": "^1.2.5",
+    "@types/node": "^20.12.12",
+    "esbuild": "^0.21.3"
+  },
+  "dependencies": {
+    "@paydirt/fmt": "^0.3.1",
+    "minimist": "^1.2.8"
+  }
+}
