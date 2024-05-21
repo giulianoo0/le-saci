@@ -5,6 +5,7 @@ declare global {
     var input: Array<string>
 }
 
+import {transformFileSync} from "@babel/core"
 import minimist from "minimist";
 import { EOL } from "os";
 import { exit } from "process";
@@ -19,12 +20,24 @@ const argv = minimist(process.argv.slice(2));
 const dryArgs = argv["_"]
 const action: "run" | "build" | undefined  = dryArgs[0] === "run" ? "run" : dryArgs[0] === "build" ? "build" : undefined
 
+let filePath;
 switch(action) {
     case "build":
-        console.log("Em desenvolvimento")
+        filePath = dryArgs[1];
+        console.log(filePath)
+        let out = argv["output"] ?? "./output__legacy.js"
+        let res;
+        try {
+            res = transformFileSync(filePath);
+        } catch (err) {
+            console.log(err)
+            exit(1)
+        }
+        fs.writeFileSync(out, res!.code!.replace(`"use strict";${EOL}`, ""))
+        console.log(`Compilado para ES3: ${out}`)
         exit(0)
     case "run":
-        const filePath = dryArgs[1];
+         filePath = dryArgs[1];
         try {
             global.input = fs.readFileSync((argv.input), 'utf-8').toString().split(EOL);
         } catch (err) {
