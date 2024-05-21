@@ -2,8 +2,8 @@
 Este projeto está em desenvolvimento e não foi finalizado.
 
 
-Um interpretador (e compilador, no futuro) funcional que simula à risca o ambiente SACI, da Olimpiada Brasileira de Informática - feito em Node
-Com o Lê Saci, você pode utilizar funções mais modernas do JavaScript, como `let, const, arrow functions`, com compatibilidade ao interpretador da OBI.
+Um interpretador (e compilador, no futuro) funcional que simula à risca o ambiente SACI, da Olimpiada Brasileira de Informática - feito em Node    
+Com o Lê Saci, você pode utilizar funções mais modernas (ES5, ao invés do ES3) do JavaScript, como `let, const, arrow functions`, com compatibilidade ao interpretador da OBI.
 
 ## Download
 ### Método 1 (pré-compilado)
