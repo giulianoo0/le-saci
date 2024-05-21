@@ -4,7 +4,7 @@
   "description": "Um interpretador funcional que simula à risca o ambiente saci - feito em Node",
   "main": "src/index.ts",
   "scripts": {
-    "build": "esbuild src/index.ts --bundle --platform=node --outfile=out/compiler.js"
+    "build": "esbuild src/index.ts --bundle --platform=node --outfile=out/saci.js"
   },
   "keywords": [],
   "author": "",
